@@ -20,7 +20,7 @@ const repositories = [
 
 function RespositoryList() {
     const repositoriesItens = repositories.map(repository => {
-        return <RespositoryItem repository={repository} />;
+        return <RespositoryItem key={repository.name} repository={repository} />;
     })
 
     return (
