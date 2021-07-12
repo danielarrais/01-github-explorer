@@ -1,5 +1,7 @@
+import RespositoryList from "./components/RepositoryList";
+
 function App() {
-    return <h1>Hello World!</h1>
+    return <RespositoryList />
 }
 
 export default App;
