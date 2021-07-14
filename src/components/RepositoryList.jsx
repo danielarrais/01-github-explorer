@@ -1,5 +1,7 @@
 import RespositoryItem from "./RepositoryItem";
 
+import '../styles/repositories.scss'
+
 const repositories = [
     {
         name: "nlw-together-letmeask",
