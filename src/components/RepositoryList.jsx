@@ -1,6 +1,9 @@
+import { useState, useEffect } from 'react';
 import RespositoryItem from "./RepositoryItem";
 
 import '../styles/repositories.scss'
+
+// 
 
 const repositories = [
     {
@@ -21,9 +24,23 @@ const repositories = [
 ]
 
 function RespositoryList() {
+    const [repositories, setRepositories] = useState([]);
+
+    useEffect(() => {
+        fetch('https://api.github.com/users/danielarrais/repos')
+            .then(response => response.json())
+            .then(data => {
+                setRepositories(data);
+            })
+    }, [repositories])
+
     const repositoriesItens = repositories.map(repository => {
         return <RespositoryItem key={repository.name} repository={repository} />;
     })
+
+    onclick = (event) => {
+        console.log(event.target);
+    }
 
     return (
         <section className="repository-list">
@@ -31,6 +48,7 @@ function RespositoryList() {
             <ul>
                 {repositoriesItens}
             </ul>
+            <button onClick={}></button>
         </section>
     );
 }
